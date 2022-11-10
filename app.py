@@ -1,17 +1,25 @@
-from flask import Flask, jsonify, request
-
+from flask import Flask, jsonify, render_template
+import json
 # Intitialise the app
 app = Flask(__name__)
 
+# Functions
+def readJSON(filename='data.json'):
+    with open(filename,'r') as read_file:
+        data = json.load(read_file)
+        return data
+
 # Define what the app does
-@app.get("/greet")
+@app.get("/")
 def index():
-    """
-    TODO:
-    1. Capture first name & last name
-    2. If either is not provided: respond with an error
-    3. If first name is not provided and second name is provided: respond with "Hello Mr <second-name>!"
-    4. If first name is provided byt second name is not provided: respond with "Hello, <first-name>!"
-    5. If both names are provided: respond with a question, "Is your name <fist-name> <second-name>
-    """
-    return jsonify("TODO")
+    return render_template('index.html')
+
+@app.get("/mahasiswa")
+def mahasiswa():
+    data = readJSON()
+    return jsonify(data)
+
+@app.get("/bismillahsukses")
+def bismillah():
+    response = {"string" : "bismillah TST A aamiiin"}
+    return jsonify(response)
