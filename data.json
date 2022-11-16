@@ -1,14 +1,12 @@
 {
-    "person1":
-    {
+    "Rakha": {
         "Nama": "Muhammad Rakha Wiratama",
-        "NIM" : 18220070,
-        "Status" : "Single"
+        "NIM": "135",
+        "Status": "Single"
     },
-    "person2":
-    {
+    "Daffa": {
         "Nama": "Daffa Febryananta Arifinsyah",
-        "NIM" : 18220018,
-        "Status" : "Jomblo"
+        "NIM": 18220018,
+        "Status": "Jomblo"
     }
 }
